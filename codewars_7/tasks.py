@@ -5,7 +5,7 @@ Ex: Input = ["Ryan", "Kieran", "Jason", "Yous"], Output = ["Ryan", "Yous"]
 
 
 def friend(x: list[str]) -> list[str]:
-    return list(filter(lambda x: len(x) == 4, x))
+    return list(filter(lambda y: len(y) == 4, x))
 
 
 '''
@@ -81,16 +81,15 @@ Double ring inner circle: `324 mm`
 Double ring outer circle: `340 mm`
 If you liked this kata, you can continue with: Let's Play Darts: Beat The Power!'''
 
-
 import numpy as np
 
 
-def get_score(x: int, y: int):
+def get_score(x: int | float, y: int | float):
     sector_data = (6, 13, 4, 18, 1, 20, 5, 12, 9, 14, 11, 8, 16, 7, 19, 3, 17, 2, 15, 10)
 
-    def get_sector_and_radius(x, y):
-        rho = np.sqrt(x ** 2 + y ** 2)
-        phi = np.degrees(np.arctan2(y, x)) if y >= 0 else 360 + np.degrees(np.arctan2(y, x))
+    def get_sector_and_radius(x_coord, y_coord):
+        rho = np.sqrt(x_coord ** 2 + y_coord ** 2)
+        phi = np.degrees(np.arctan2(y_coord, x_coord)) if y_coord >= 0 else 360 + np.degrees(np.arctan2(y_coord, x_coord))
         return rho, phi
 
     fight_rad, fight_degree = get_sector_and_radius(x, y)
