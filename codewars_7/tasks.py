@@ -123,4 +123,6 @@ def get_score(x: int | float, y: int | float):
 
 
 if __name__ == '__main__':
-    print(get_score(117.95, -5))
+    pass
+
+
